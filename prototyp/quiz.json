@@ -1,0 +1,27 @@
+{
+	"quizmodules" :[
+		{
+			"id":		1,
+			"type":		"dropdown",
+			"question":	"Das ist die Frage",
+			"answers":	["Lösung 1", "Lösung 2", "Lösung 3"],
+			"solution":	"Lösung 2",
+			"points" :	1
+		},
+		{
+			"id":		2,
+			"type":		"multiplechoice",
+			"question":	"Das ist die Frage",
+			"answers":	["Lösung 1", "Lösung 2", "Lösung 3", "Lösung 4", "Lösung 5"],
+			"solution":	["Lösung 2", "Lösung 3", "Lösung 5"],
+			"points" :	3
+		},
+		{
+			"id":		3,
+			"type":		"freetext",
+			"question":	"Das ist die Frage",
+			"solution":	"Lösung zum Vergleich",
+			"points" :	2
+		}
+	]
+}
