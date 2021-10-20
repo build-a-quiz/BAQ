@@ -263,7 +263,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8gt+XWcOXz3I="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -271,7 +272,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8gt+XWcOXz3I="
 							},
-							"name": "username"
+							"name": "username",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -279,7 +281,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8gt+XWcOXz3I="
 							},
-							"name": "password"
+							"name": "password",
+							"type": ""
 						}
 					]
 				}
@@ -322,7 +325,7 @@
 									"top": 61,
 									"width": 178.5732421875,
 									"height": 13,
-									"text": "user"
+									"text": "Users"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -420,7 +423,7 @@
 									"top": 53,
 									"width": 216.1259765625,
 									"height": 13,
-									"text": "quiz"
+									"text": "Quiz"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -554,7 +557,7 @@
 										"$ref": "AAAAAAF8guyAcMSBfl8="
 									},
 									"edgePosition": 1,
-									"text": "creadted"
+									"text": "created"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -630,7 +633,7 @@
 									"top": 245,
 									"width": 162.88818359375,
 									"height": 13,
-									"text": "score"
+									"text": "Score"
 								},
 								{
 									"_type": "ERDColumnCompartmentView",
@@ -742,12 +745,12 @@
 										"$ref": "AAAAAAF8gwni98UabmI="
 									},
 									"font": "Arial;13;0",
-									"left": 145,
-									"top": 150,
+									"left": 144,
+									"top": 175,
 									"width": 24.57177734375,
 									"height": 13,
-									"alpha": 0.5235987755982988,
-									"distance": 30,
+									"alpha": 0.26791051301843094,
+									"distance": 52.88667128870941,
 									"hostEdge": {
 										"$ref": "AAAAAAF8gwni98UabmI="
 									},
@@ -798,7 +801,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8guMRZsPXGJU="
 					},
-					"name": "user",
+					"name": "Users",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
@@ -862,7 +865,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF8guNgu8PcAds="
 							},
-							"name": "creadted",
+							"name": "created",
 							"end1": {
 								"_type": "ERDRelationshipEnd",
 								"_id": "AAAAAAF8guyAb8R+OqA=",
@@ -952,7 +955,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF8guNgu8PcAds="
 							},
-							"name": "id",
+							"name": "user_id",
 							"type": "INTEGER",
 							"length": 0,
 							"primaryKey": true
@@ -985,7 +988,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8guMRZsPXGJU="
 					},
-					"name": "quiz",
+					"name": "Quiz",
 					"columns": [
 						{
 							"_type": "ERDColumn",
@@ -1048,7 +1051,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF8guMRZsPXGJU="
 					},
-					"name": "score",
+					"name": "Score",
 					"ownedElements": [
 						{
 							"_type": "ERDRelationship",
