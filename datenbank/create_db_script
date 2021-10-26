@@ -22,7 +22,9 @@ grant all on baq.* to baq@localhost identified by 'baq123';
 #Tabelle users anlegen:
 create table users ( user_id int primary key AUTO_INCREMENT,
                      username varchar(15),
-                     password varchar(15));
+                     password varchar(15),
+                     mail varchar(30),
+                     current_quiz int REFERENCES quiz(quiz_id);
 
 #Tabelle quiz anlegen:
 create table quiz ( quiz_id int primary key AUTO_INCREMENT,
