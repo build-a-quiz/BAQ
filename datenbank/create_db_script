@@ -1,5 +1,5 @@
 #Skript für DB-Erstellung
-#Version 1.0
+#Version 2.0
 
 #DB anlegen
 create database baq;
