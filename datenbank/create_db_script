@@ -1,5 +1,5 @@
 #Skript für DB-Erstellung
-#Version 2.0
+#Version 3.0
 
 #DB anlegen
 create database baq;
@@ -23,8 +23,7 @@ grant all on baq.* to baq@localhost identified by 'baq123';
 create table users ( user_id int primary key AUTO_INCREMENT,
                      username varchar(15),
                      password varchar(15),
-                     mail varchar(30),
-                     current_quiz int REFERENCES quiz(quiz_id);
+                     mail varchar(30));
 
 #Tabelle quiz anlegen:
 create table quiz ( quiz_id int primary key AUTO_INCREMENT,
@@ -36,8 +35,12 @@ create table quiz ( quiz_id int primary key AUTO_INCREMENT,
 #Tabelle score anlegen:
 create table score( user_id int not null REFERENCES users(user_id),
                    	quiz_id int not null REFERENCES quiz (quiz_id),
-                    points int not null);
+                    points int not null
+                    counter int);
 
+#Testuser anlegen:
+insert into users (username, password, mail) values ('luke', 'luke', 'luke@baq.de');
+insert into users (username, password, mail) values ('lea', 'lea', 'lea@baq.de');
 
 #DB löschen:
 #drop database 'baq';
