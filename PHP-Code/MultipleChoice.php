@@ -21,11 +21,11 @@ class MultipleChoice extends Question{
                 <h4 class='display-4'>{$question}</h4>
                 <div>".PHP_EOL;
                 foreach ($answers as $value){
-                    $this->counter++;
+                    $count = $this->counter++;
                     echo '
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="option.{$counter}" value="option{$counter}">
-                          <label class="form-check-label" for="option{$counter}">' .$value. '</label>
+                        <input class="form-check-input" type="checkbox" role="switch" id="option'.$count.'" value="option'.$count.'">
+                          <label class="form-check-label" for="option'.$count.'">' .$value. '</label>
                     </div>' .PHP_EOL;
                 }
             echo "</div>
