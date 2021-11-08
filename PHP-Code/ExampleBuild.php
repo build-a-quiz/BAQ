@@ -5,6 +5,7 @@ require 'MultipleChoice.php';
 require 'DropDown.php';
 $freeTextQuestion = new FreeText();
 $multipleChoiceQuestion = new MultipleChoice();
+$dropDownQuestion = new DropDown();
 echo '<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -28,7 +29,8 @@ echo '<!DOCTYPE html>
 
             $freeTextQuestion->setQuestion("Wie wird ein Qubit auf der Bloch-Kugel dargestellt?", "Vektor", "Vektor");
             $multipleChoiceQuestion->setQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"], "Erwin Schrödinger");
-echo '
+            $dropDownQuestion->setQuestion("Test", ["Herz", "Blut", "Beil"], "Beil");
+            echo '
             </div>
             </div>
             </div>
