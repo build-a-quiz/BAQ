@@ -16,20 +16,22 @@ echo '<!DOCTYPE html>
     <div class="row align-items-center">
         <div class="col-9">
             <br>
-            <h1 class="display-1">Fragen
-            <h4>
-            <small class="text-muted">Welche Fragentypen können mit Build-A-Quiz erstellt werden</small>
-            </h4>
-            </h1>
+                <h1 class="display-1">Fragen
+                    <h4>
+                        <small class="text-muted">
+                            Welche Fragentypen können mit Build-A-Quiz erstellt werden
+                        </small>
+                    </h4>
+                </h1>
             <br>
           '.PHP_EOL;
             $freeTextQuestion->setQuestion("Wie wird ein Qubit auf der Bloch-Kugel dargestellt?", "Vektor", "Vektor");
             $multipleChoiceQuestion->setQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"], "Erwin Schrödinger");
             $dropDownQuestion->setQuestion("Was ist die höchstwertige technische Entwicklung auf Basis des Tunneleffekts ", ["Hochfrequenz-Halbleiter", "Cooper-Paare", "Gleichmäßig verteilter Käse auf Nachos"], "Gleichmäßig verteilter Käse auf Nachos");
             echo '
+               </div>
             </div>
-            </div>
-            </div>
-</body>
+          </div>
+    </body>
 </html>
 ' .PHP_EOL;

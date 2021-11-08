@@ -9,18 +9,18 @@ class FreeText extends Question {
         echo "<div>
                 <br>
                 <h4 class='display-3'>
-                <small class='text-muted'>
-                Tragen Sie die korrekte Antwort in das Eingabefeld ein
-                </small>
+                    <small class='text-muted'>
+                        Tragen Sie die korrekte Antwort in das Eingabefeld ein
+                    </small>
                 </h4>
                 <br>
                 <form>
-                <h4>{$question}</h4>
+                    <h4>{$question}</h4>
                 <div>
-                <input class='form-control' type='text' placeholder='Bitte Antwort hier eingeben...'>
+                    <input class='form-control' type='text' placeholder='Bitte Antwort hier eingeben...'>
                 </div>
-        </form>
-</div>" . PHP_EOL;
+                    </form>
+                </div>" . PHP_EOL;
 readfile('../tpl/submitButton.tpl');
     }
 }
