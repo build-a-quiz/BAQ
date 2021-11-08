@@ -1,6 +1,8 @@
 <?php
 require 'Question.php';
 require 'FreeText.php';
+$freeTextQuestion = new FreeText();
+$multipleChoiceQuestion = new MultipleChoice();
 echo '<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -21,7 +23,6 @@ echo '<!DOCTYPE html>
             </h1>
             <br>
           '.PHP_EOL;
-            $freeTextQuestion = new FreeText();
             $freeTextQuestion->setQuestion("Wie wird ein Qubit auf der Bloch-Kugel dargestellt?", "Vektor", "Vektor");
 echo '
             </div>
