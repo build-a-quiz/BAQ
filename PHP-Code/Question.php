@@ -14,9 +14,6 @@ abstract class Question {
     public function getSolution(): string{
         return $this->solution;
     }
-    public function setAnswers($answers){
-        $this->answers= $answers;
-    }
     public function getAnswers(): array{
         return $this->answers;
     }
