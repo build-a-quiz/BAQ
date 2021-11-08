@@ -2,6 +2,7 @@
 require 'Question.php';
 require 'FreeText.php';
 require 'MultipleChoice.php';
+require 'DropDown.php';
 $freeTextQuestion = new FreeText();
 $multipleChoiceQuestion = new MultipleChoice();
 echo '<!DOCTYPE html>

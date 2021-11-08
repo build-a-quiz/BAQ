@@ -6,9 +6,6 @@ class MultipleChoice extends Question{
         $this->setType($type);
     }
     function setQuestion($question, $answers, $solution){
-        $this->question= question;
-        $this->answers = $answers;
-        $this->solution = $solution;
         echo "<div>
                 <br>
                 <h4 class='display-3'>
@@ -20,16 +17,17 @@ class MultipleChoice extends Question{
                 <form>
                 <h4 class='display-4'>{$question}</h4>
                 <div>".PHP_EOL;
-                foreach ($answers as $value){
+                foreach ($answers as $answer){
                     $count = $this->counter++;
                     echo '
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="option'.$count.'" value="option'.$count.'">
-                          <label class="form-check-label" for="option'.$count.'">' .$value. '</label>
+                          <label class="form-check-label" for="option'.$count.'">' .$answer. '</label>
                     </div>' .PHP_EOL;
                 }
             echo "</div>
         </form>
 </div>" . PHP_EOL;
+        readfile('submitButton.tpl');
     }
 }

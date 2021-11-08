@@ -1,13 +1,11 @@
 <?php
 class FreeText extends Question {
-
     function __construct(){
         $type ="FreeText";
         $this->setType($type);
     }
     public function setQuestion($question, $answers, $solution){
         $answers = null;
-        $this->question= question;
         echo "<div>
                 <br>
                 <h4 class='display-3'>
