@@ -15,7 +15,7 @@ class FreeText extends Question {
                 </h4>
                 <br>
                 <form>
-                <h4 class='display-4'>{$question}</h4>
+                <h4>{$question}</h4>
                 <div>
                 <input class='form-control' type='text' placeholder='Bitte Antwort hier eingeben...'>
                 </div>

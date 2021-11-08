@@ -16,7 +16,7 @@ class DropDown extends Question{
                 </h4>
                 <br>
                 <form>
-                <h4 class='display-4'>{$question}</h4>
+                <h4>{$question}</h4>
                 <div>
                 <select class='form-select' aria-label='Bitte Anwort auswählen'>
                 <option selected>Bitte Antwort auswählen...</option>".PHP_EOL;

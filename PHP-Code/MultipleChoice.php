@@ -15,7 +15,7 @@ class MultipleChoice extends Question{
                 </h4>
                 <br>
                 <form>
-                <h4 class='display-4'>{$question}</h4>
+                <h4>{$question}</h4>
                 <div>".PHP_EOL;
                 foreach ($answers as $answer){
                     $count = $this->counter++;
