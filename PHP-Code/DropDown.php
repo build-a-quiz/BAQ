@@ -5,7 +5,7 @@ class DropDown extends Question{
         $type ="DropDown";
         $this->setType($type);
     }
-    function setQuestion($question, $answers){
+    function setQuestion($question, $answers, $solution){
         // TODO: Implement setQuestion() method.
     }
 }

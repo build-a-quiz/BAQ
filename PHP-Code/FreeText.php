@@ -1,22 +1,28 @@
 <?php
 class FreeText extends Question {
+
     function __construct(){
         $type ="FreeText";
         $this->setType($type);
     }
-    public function setQuestion($question, $answers){
+    public function setQuestion($question, $answers, $solution){
         $answers = null;
+        $this->question= question;
         echo "<div>
+                <br>
+                <h4 class='display-3'>
+                <small class='text-muted'>
+                Tragen Sie die korrekte Antwort in das Eingabefeld ein
+                </small>
+                </h4>
+                <br>
                 <form>
-                <h3>Tragen Sie die korrekte Antwort in das Eingabefeld ein</h3>
-                <p>{$question}</p>
+                <h4 class='display-4'>{$question}</h4>
                 <div>
-                    <label for='FreeTextAnswer'></label>
-                    <br>
-                    <textarea id='FreeTextAnswer' name='FreeTextSolution' cols='1' rows='1' placeholder='Antwort hier eingeben'></textarea>
+                <input class='form-control' type='text' placeholder='Bitte Antwort hier eingeben...'>
                 </div>
         </form>
 </div>" . PHP_EOL;
-readfile('submitButton');
+readfile('submitButton.tpl');
     }
 }

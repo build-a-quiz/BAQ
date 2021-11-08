@@ -5,7 +5,9 @@ abstract class Question {
     private string $solution;
     private string $type;
     private int $points;
-    abstract function setQuestion($question, $answers);
+
+    abstract function setQuestion($question, $answers, $solution);
+
     public function getQuestion(): string{
         return $this->question;
     }
