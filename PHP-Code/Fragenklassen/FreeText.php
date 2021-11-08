@@ -21,6 +21,6 @@ class FreeText extends Question {
                 </div>
         </form>
 </div>" . PHP_EOL;
-readfile('submitButton.tpl');
+readfile('../tpl/submitButton.tpl');
     }
 }

@@ -1,8 +1,5 @@
 <?php
-require 'Question.php';
-require 'FreeText.php';
-require 'MultipleChoice.php';
-require 'DropDown.php';
+require_once '../config/config.php';
 $freeTextQuestion = new FreeText();
 $multipleChoiceQuestion = new MultipleChoice();
 $dropDownQuestion = new DropDown();
@@ -26,7 +23,6 @@ echo '<!DOCTYPE html>
             </h1>
             <br>
           '.PHP_EOL;
-
             $freeTextQuestion->setQuestion("Wie wird ein Qubit auf der Bloch-Kugel dargestellt?", "Vektor", "Vektor");
             $multipleChoiceQuestion->setQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"], "Erwin Schrödinger");
             $dropDownQuestion->setQuestion("Was ist die höchstwertige technische Entwicklung auf Basis des Tunneleffekts ", ["Hochfrequenz-Halbleiter", "Cooper-Paare", "Gleichmäßig verteilter Käse auf Nachos"], "Gleichmäßig verteilter Käse auf Nachos");
