@@ -8,6 +8,7 @@ class MultipleChoice extends Question{
     function setQuestion($question, $answers, $solution){
         $this->question= question;
         $this->answers = $answers;
+        $this->solution = $solution;
         echo "<div>
                 <br>
                 <h4 class='display-3'>
@@ -24,7 +25,7 @@ class MultipleChoice extends Question{
                     echo '
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" role="switch" id="option.{$counter}" value="option{$counter}">
-                          <label class="form-check-label" for="option{$counter}">{$value}</label>
+                          <label class="form-check-label" for="option{$counter}">' .$value. '</label>
                     </div>' .PHP_EOL;
                 }
             echo "</div>
