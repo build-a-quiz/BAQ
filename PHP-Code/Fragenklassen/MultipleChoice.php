@@ -5,7 +5,7 @@ class MultipleChoice extends Question{
         $type ="MultipleChoice";
         $this->setType($type);
     }
-    function setQuestion($question, $answers, $solution){
+    function buildQuestion($question, $answers){
         $this->getHeader($this->getType());
         echo "<form>
                     <h4>{$question}</h4>

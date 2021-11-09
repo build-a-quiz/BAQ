@@ -6,8 +6,25 @@ abstract class Question {
     private string $type;
     private int $points;
 
-    abstract function setQuestion($question, $answers, $solution);
+    //abstract function that builds questions as html according to their parameters
+    abstract function buildQuestion($question, $answers);
 
+    //generic Getters & Setters
+    public function setQuestion($question){
+        $this->question = $question;
+    }
+    public function setAnswers($answers){
+        $this->answers = $answers;
+    }
+    public function setSolution($solution){
+        $this->solution = $solution;
+    }
+    public function setPoints($points){
+        $this->points= $points;
+    }
+    public function setType($type){
+        $this->type = $type;
+    }
     public function getQuestion(): string{
         return $this->question;
     }
@@ -17,18 +34,14 @@ abstract class Question {
     public function getAnswers(): array{
         return $this->answers;
     }
-    public function setPoints($points){
-        $this->points= $points;
-    }
     public function getPoints(): int{
         return $this->points;
-    }
-    public function setType($type){
-        $this->type = $type;
     }
     public function getType(): string{
         return $this->type;
     }
+
+    //Printing the header for a question into HTML dependent upon it's type
     public function getHeader($type){
         if($type == "MultipleChoice" || $type == "DropDown"){
             echo "<div>
@@ -52,6 +65,7 @@ abstract class Question {
             echo "<h4 class='display-3'> Kein gültiger Klassentyp mitgegeben</h4>".PHP_EOL;
         }
     }
+    //Short function for implementing a Confirm-Button
     public function implementButton(){
         readfile('../tpl/submitButton.tpl');
     }
