@@ -23,6 +23,5 @@ class DropDown extends Question{
                     </div>
                 </form>
             </div>" . PHP_EOL;
-        readfile('../tpl/submitButton.tpl');
     }
 }

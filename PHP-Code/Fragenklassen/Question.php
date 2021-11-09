@@ -29,6 +29,9 @@ abstract class Question {
     public function getType(): string{
         return $this->type;
     }
+    public function implementButton(){
+        readfile('../tpl/submitButton.tpl');
+    }
     public function getHeader($type){
         if($type == "MultipleChoice" || $type == "DropDown"){
             echo "<div>
