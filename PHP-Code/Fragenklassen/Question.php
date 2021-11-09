@@ -29,4 +29,7 @@ abstract class Question {
     public function getType(): string{
         return $this->type;
     }
+    public function implementButton(){
+        readfile('../tpl/submitButton.tpl');
+    }
 }

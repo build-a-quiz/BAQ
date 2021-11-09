@@ -28,6 +28,5 @@ class MultipleChoice extends Question{
                     echo "</div>
                     </form>
                 </div>" . PHP_EOL;
-        readfile('../tpl/submitButton.tpl');
     }
 }
