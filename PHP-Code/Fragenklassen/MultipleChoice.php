@@ -6,15 +6,8 @@ class MultipleChoice extends Question{
         $this->setType($type);
     }
     function setQuestion($question, $answers, $solution){
-        echo "<div>
-                <br>
-                <h4 class='display-3'>
-                    <small class='text-muted'>
-                        Wählen Sie die korrekte Antwort aus
-                    </small>
-                </h4>
-                <br>
-                <form>
+        $this->getHeader($this->getType());
+        echo "<form>
                     <h4>{$question}</h4>
                     <div>".PHP_EOL;
                     foreach ($answers as $answer){
