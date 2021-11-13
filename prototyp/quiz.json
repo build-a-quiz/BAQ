@@ -5,7 +5,7 @@
 			"type":		"dropdown",
 			"question":	"Das ist die Frage",
 			"answers":	["Lösung 1", "Lösung 2", "Lösung 3"],
-			"solution":	"Lösung 2",
+			"solution":	2,
 			"points" :	1
 		},
 		{
@@ -13,7 +13,7 @@
 			"type":		"multiplechoice",
 			"question":	"Das ist die Frage",
 			"answers":	["Lösung 1", "Lösung 2", "Lösung 3", "Lösung 4", "Lösung 5"],
-			"solution":	["Lösung 2", "Lösung 3", "Lösung 5"],
+			"solution":	[2, 3, 5],
 			"points" :	3
 		},
 		{
