@@ -13,7 +13,7 @@
 			"type":		"multiplechoice",
 			"question":	"Das ist die Frage",
 			"answers":	["Lösung 1", "Lösung 2", "Lösung 3", "Lösung 4", "Lösung 5"],
-			"solution":	[2, 3, 5],
+			"solution":	[2, 3, 4],
 			"points" :	3
 		},
 		{
