@@ -1,5 +1,6 @@
 <?php
 abstract class Question {
+
     private string $question;
     private array $answers;
     private string $solution;

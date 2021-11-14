@@ -3,6 +3,7 @@ require_once '../config/config.php';
 $freeTextQuestion = new FreeText();
 $multipleChoiceQuestion = new MultipleChoice();
 $dropDownQuestion = new DropDown();
+
 echo '<!DOCTYPE html>
 <html lang="de">
 <head>

@@ -1,5 +1,6 @@
 <?php
 class FreeText extends Question {
+
     function __construct(){
         $type ="FreeText";
         $this->setType($type);

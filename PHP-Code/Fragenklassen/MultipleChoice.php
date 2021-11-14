@@ -1,5 +1,6 @@
 <?php
 class MultipleChoice extends Question{
+
     private int $counter = 0;
     function __construct(){
         $type ="MultipleChoice";
