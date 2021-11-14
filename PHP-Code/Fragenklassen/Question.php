@@ -42,8 +42,8 @@ abstract class Question {
     }
 
     //Printing the header for a question into HTML dependent upon it's type
-    public function getHeader($type){
-        if($type == "MultipleChoice" || $type == "DropDown"){
+    public function getHeader(){
+        if($this->type == "MultipleChoice" || $this->type == "DropDown"){
             echo "<div>
                 <br>
                 <h4 class='display-3'>
@@ -52,7 +52,7 @@ abstract class Question {
                     </small>
                 </h4>
                 <br>". PHP_EOL;
-        } elseif ($type == "FreeText"){
+        } elseif ($this->type == "FreeText"){
             echo "<div>
                 <br>
                 <h4 class='display-3'>
@@ -64,9 +64,5 @@ abstract class Question {
         } else {
             echo "<h4 class='display-3'> Kein gültiger Klassentyp mitgegeben</h4>".PHP_EOL;
         }
-    }
-    //Short function for implementing a Confirm-Button
-    public function implementButton(){
-        readfile('../tpl/submitButton.tpl');
     }
 }
