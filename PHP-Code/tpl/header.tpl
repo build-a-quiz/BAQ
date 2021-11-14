@@ -1,5 +1,5 @@
 <header>
-    <img src="../../resources/Build_A_Quiz.GIF" width="250" height="250" class="float-left" alt="">
+    <img src="/../../resources/Build_A_Quiz.GIF" width="250" height="250" class="float-left" alt="">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-info">
     <a class="navbar-brand" href="#">
