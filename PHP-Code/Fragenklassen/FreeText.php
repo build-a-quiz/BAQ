@@ -1,12 +1,10 @@
 <?php
 class FreeText extends Question {
-
     function __construct(){
         $type ="FreeText";
         $this->setType($type);
     }
-    public function setQuestion($question, $answers, $solution){
-        $answers = null;
+    public function buildQuestion($question, $answers){
         $this->getHeader($this->getType());
         echo " <form>
                     <h4>{$question}</h4>
