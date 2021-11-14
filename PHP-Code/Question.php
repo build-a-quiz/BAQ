@@ -40,7 +40,7 @@ abstract class Question {
     public function getType(): string{
         return $this->type;
     }
-
+/*
     //Printing the header for a question into HTML dependent upon it's type
     public function getHeader($type){
         if($type == "MultipleChoice" || $type == "DropDown"){
@@ -65,8 +65,10 @@ abstract class Question {
             echo "<h4 class='display-3'> Kein gültiger Klassentyp mitgegeben</h4>".PHP_EOL;
         }
     }
+	*/
+	
     //Short function for implementing a Confirm-Button
     public function implementButton(){
-        readfile('../tpl/submitButton.tpl');
+        readfile('submitButton.tpl');
     }
 }
