@@ -46,20 +46,20 @@ abstract class Question {
         if($this->type == "MultipleChoice" || $this->type == "DropDown"){
             echo "<div>
                 <br>
-                <h4 class='display-3'>
+                <h3 class='display-4'>
                     <small class='text-muted'>
                         Wählen Sie die korrekte Antwort aus
                     </small>
-                </h4>
+                </h3>
                 <br>". PHP_EOL;
         } elseif ($this->type == "FreeText"){
             echo "<div>
                 <br>
-                <h4 class='display-3'>
+                <h3 class='display-4'>
                     <small class='text-muted'>
                         Tragen Sie die korrekte Antwort in das Eingabefeld ein
                     </small>
-                </h4>
+                </h3>
                 <br>".PHP_EOL;
         } else {
             echo "<h4 class='display-3'> Kein gültiger Klassentyp mitgegeben</h4>".PHP_EOL;
