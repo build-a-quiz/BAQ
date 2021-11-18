@@ -40,7 +40,6 @@ abstract class Question {
     public function getType(): string{
         return $this->type;
     }
-
     //Printing the header for a question into HTML dependent upon it's type
     public function getHeader(){
         if($this->type == "MultipleChoice" || $this->type == "DropDown"){

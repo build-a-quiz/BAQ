@@ -29,13 +29,13 @@ create table users ( user_id int primary key AUTO_INCREMENT,
 create table quiz ( quiz_id int primary key AUTO_INCREMENT,
                      quiz_name varchar(20),
                      creator integer not null REFERENCES users(user_id),
-                     quiz_json varchar(500),
+                     quiz_json varchar(5000),
                      total_points integer);
 
 #Tabelle score anlegen:
 create table score( user_id int not null REFERENCES users(user_id),
                    	quiz_id int not null REFERENCES quiz (quiz_id),
-                    points int not null
+                    points int not null,
                     counter int);
 
 #Testuser anlegen:
