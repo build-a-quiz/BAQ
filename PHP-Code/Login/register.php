@@ -1,13 +1,11 @@
 <?php
-// Include config file
-require_once "../config/config_db.php";
-
 // Define variables and initialize with empty values
 $username = $mail = $password = $confirm_password = "";
 $username_err = $mail_err = $password_err = $confirm_password_err = "";
+$link ="";
 
-
-//$link ="";
+// Include config file
+require_once "../config/config_db.php";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){

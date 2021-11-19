@@ -8,13 +8,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 
-// Include config file for database connection
-require_once "../config/config_db.php";
-
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
-//$link = "";
+$link = "";
+
+// Include config file for database connection
+require_once "../config/config_db.php";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
