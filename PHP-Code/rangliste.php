@@ -65,6 +65,6 @@ $mysqli->close();
 
 ?>
 
- </table>
+  </table>
  </body>
 </html>

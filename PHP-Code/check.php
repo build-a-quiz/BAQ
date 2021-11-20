@@ -1,11 +1,5 @@
 <?php
 
-
-//print_r($_POST);
-//echo "<br>";
-//echo "<br>";
-
-
 //Quiz_ID aus GET_Request holen, die beim Klick auf "Quiz-Spielen" die Quiz_ID übermittelt
 //$quiz_id = $_GET(['quiz_id']);
 $quiz_id = 1;
@@ -151,7 +145,7 @@ $mysqli = new mysqli("localhost", "root", "", "baq");
      } 
 	else 
 	 {
-         $insert = "insert into score (user_id, quiz_id, points, counter ) values ('$user_id','$quiz_id', '$punkte', 0)";
+         $insert = "update score set points = $punkte";
          $mysqli->query($insert);
 		 
 		 $update = "update score set counter = (counter +1) where user_id='$user_id' AND quiz_id='$quiz_id'";
@@ -164,16 +158,15 @@ $mysqli->close();
 ?>
 <!doctype HTML>
 <html>
-<head>
-</head>
-<body>
+ <head>
+ </head>
+ <body>
 
-<h3>Vergleichen Sie sich mit Ihren Freunden</h3>
+   <h3>Vergleichen Sie sich mit Ihren Freunden</h3>
 <?php
 echo "<a href='rangliste.php?quiz_id=".$quiz_id."'>Zur Rangliste </a>";
-
 ?>
 
-</body>
+ </body>
 </html>
 
