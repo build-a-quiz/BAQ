@@ -50,7 +50,7 @@ $json_daten = json_decode($daten);
     {
 		$fragen_counter++;
 		echo "<h3>Frage: ".$fragen_counter."</h3>";
-		
+
 		//Fall 1: Wenn Frage "dropdown"
 		if($json_daten[$key]->type == "dropdown")
 		{
