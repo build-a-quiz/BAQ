@@ -71,7 +71,7 @@ foreach($json_daten as $key => $value)
 			echo "Die Auswahl_Freetext Lösung ist: <br>";
 			echo "Falsch! <br><br>";
 		}
-		
+        
 		$counter_freetext++;
 	}
 	
