@@ -1,10 +1,11 @@
-/* Coded with love by Mutiullah Samim */
+
 	body,
 	html {
 		margin: 0;
 		padding: 0;
 		height: 100%;
 /* background: #60a3bc !important;*/
+		backgSround: url("https://thumbs.dreamstime.com/z/vector-nahtlose-muster-der-fragezeichen-quiz-hintergrund-sketch-f%C3%BCr-blaue-flecken-161783786.jpg");
 	}
 	.user_card {
 		height: 400px;
