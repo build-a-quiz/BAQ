@@ -1,8 +1,8 @@
 <html>
-<head>
- <meta charset="utf-8"/>
-</head>
-<body>
+ <head>
+  <meta charset="utf-8"/>
+ </head>
+ <body>
 
 <?php
 //Einbinden der Konfig-Datei, die die einzelnen Klassen der Fragen enthält
@@ -39,10 +39,9 @@ $json_daten = json_decode($daten);
 //print_r($json_daten); 	
  
 //Fragen mit Inhalt aus DB($json_daten) und den vorgefertigten Frage-KLassen zusammenbauen:
-    
-	
+
 ?>
-<form action="check.php" method="post">
+  <form action="check.php" method="post">
 
 <?php
 	$fragen_counter = 0;
@@ -51,7 +50,7 @@ $json_daten = json_decode($daten);
     {
 		$fragen_counter++;
 		echo "<h3>Frage: ".$fragen_counter."</h3>";
-		
+
 		//Fall 1: Wenn Frage "dropdown"
 		if($json_daten[$key]->type == "dropdown")
 		{
@@ -73,12 +72,9 @@ $json_daten = json_decode($daten);
     }
 ?>
 
+   <br>
+   <button type="submit">Jetzt Antworten prüfen</button>
+  </form>
 
-<br>
-<button type="submit">Jetzt Antworten prüfen</button>
-</form>
-
-</body>
-
-
+ </body>
 </html>
