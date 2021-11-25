@@ -11,7 +11,7 @@ class FreeText extends Question {
     public function buildQuestion($question, $answers){
        // $this->getHeader($this->getType());
         echo " 
-                    <h4 class='display-4'>{$question}</h4>
+                    <h4 class='display-6'>{$question}</h4>
                 <div class='col-xs-3'>
                     <input class='form-control' id='x3' type='text' name='Auswahl_Freetext".FreeText::$freeTextCounter++."' placeholder='Bitte Antwort hier eingeben...'>
                 </div>

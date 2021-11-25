@@ -14,7 +14,7 @@ class DropDown extends Question{
     function buildQuestion($question, $answers){
         //$this->getHeader($this->getType());
         echo "
-                    <h4 class='display-4'>{$question}</h4>
+                    <h4 class='display-6'>{$question}</h4>
                     <div class='col-xs-3'>
                         <select class='form-select' id='x3' name='DropDown".DropDown::$dropdown_fragen_counter."'aria-label='Bitte Anwort auswählen'>
                             <option>Bitte Antwort auswählen...</option>".PHP_EOL;
