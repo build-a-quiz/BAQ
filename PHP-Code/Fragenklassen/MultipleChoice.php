@@ -13,12 +13,8 @@ class MultipleChoice extends Question{
         echo "
                     <h4 class='display-8'>{$question}</h4>
                     <div>".PHP_EOL;
-					
                     foreach ($answers as $answer){
                         $count = $this->counter++;
-						
-						
-						
                         echo '
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" role="switch" name="Auswahl_MC'.MultipleChoice::$mc_fragen_counter.$count.'" id="option'.$count.'" value="'.$count.'">
