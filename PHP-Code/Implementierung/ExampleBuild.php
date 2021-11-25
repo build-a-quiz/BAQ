@@ -29,13 +29,13 @@ echo '
                 </h1>
             <br>
           '.PHP_EOL;
-            $freeTextQuestion->buildQuestion("Wie wird ein Qubit auf der Bloch-Kugel dargestellt?", ["Vektor"]);
-            Helper::printButton();
 
             $multipleChoiceQuestion->buildQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"]);
-            Helper::printButton();
-
+echo "<br><br><hr><br>".PHP_EOL;
             $dropDownQuestion->buildQuestion("Was ist die höchstwertige technische Entwicklung auf Basis des Tunneleffekts ", ["Hochfrequenz-Halbleiter", "Cooper-Paare", "Gleichmäßig verteilter Käse auf Nachos"]);
+            echo "<hr>".PHP_EOL;
+            $freeTextQuestion->buildQuestion("Wie wird ein Qubit auf der Bloch-Kugel dargestellt?", ["Vektor"]);
+
             Helper::printButton();
             echo '
                </div>
