@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("location: ../Implementierung/ExampleBuild.php");
     exit;
 }
 
@@ -15,6 +15,7 @@ $link = "";
 
 // Include config file for database connection
 require_once "../config/config_db.php";
+require_once "../config/config.php";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -65,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;
 
                             // Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("location: ../Implementierung/ExampleBuild.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid password.";
@@ -97,10 +98,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../../prototyp/style.css">
+
+    <style>
+        .wrapper{ width: 360px; padding: 20px}
+        footer{alignment: center}
+    </style>
 </head>
 
 <body>
-<div class="container h-100">
+<div class="wrapper container h-100">
     <div class="d-flex justify-content-center h-100">
         <div class="user_card">
             <div class="d-flex justify-content-center">
@@ -140,7 +146,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </div>
                 </form>
             </div>
-
             <div class="mt-4">
                 <div class="d-flex justify-content-center links">
                     Don't have an account? <a href="register.php" class="ml-2">Sign Up</a>
@@ -152,13 +157,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
     </div>
 </div>
-<footer>
-    <nav>
-        <a href="kontakt.html">Kontakt</a> |
-        <a href="datenschutz.html">Datenschutzerklärung</a> |
-        <a href="https://www.hof-university.de">Hochschule_Hof</a>
-    </nav>
-</footer>
+<?php Helper::printFooter(); ?>
 </body>
 </html>
 

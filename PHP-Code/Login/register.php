@@ -6,6 +6,7 @@ $link ="";
 
 // Include config file
 require_once "../config/config_db.php";
+require_once "../config/config.php";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -112,13 +113,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        body{ font: 14px sans-serif}
+        .wrapper{ width: 360px; padding: 20px}
     </style>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper container">
+    <div class="row align-items-center">
+        <div class="col-9">
     <h2>Sign Up</h2>
     <p>Please fill this form to create an account.</p>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -143,11 +147,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Submit">
+            <input type="submit" class="btn btn-info" value="Submit">
             <input type="reset" class="btn btn-secondary ml-2" value="Reset">
         </div>
         <p>Already have an account? <a href="index.php">Login here</a>.</p>
     </form>
+        </div>
+    </div>
 </div>
+<?php Helper::printFooter();?>
 </body>
 </html>

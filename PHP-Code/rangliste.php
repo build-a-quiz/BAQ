@@ -9,7 +9,8 @@
 	padding: 10px;
    }
   </style>
-  
+ </head>
+ <body>
 <?php
 
 //DB-Abfrage um Ergebnisse von diesem Quiz zu holen
@@ -29,9 +30,7 @@ $mysqli = new mysqli("localhost", "root", "", "baq");
 		 $quiz_name = $mysqli->query($quiz_name);
 		 $res = $quiz_name->fetch_assoc();
 		 
-		 echo "  
-			</head>
-			<body>
+		 echo "
 			<h3>Rangliste: \"".$res['quiz_name']."\" (Quiz-ID: ".$quiz_id.")</h3>
 			<table>
 			<th>Profilbild</th> <th>Username</th> <th>Punkte</th>
