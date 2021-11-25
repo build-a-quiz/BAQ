@@ -14,8 +14,6 @@ class FreeText extends Question {
                     <h4>{$question}</h4>
                 <div>
                     <input class='form-control' type='text' name='Auswahl_Freetext".FreeText::$freeTextCounter++."' placeholder='Bitte Antwort hier eingeben...'>
-                </div>
-                 
                 </div>" . PHP_EOL;
     }
 }

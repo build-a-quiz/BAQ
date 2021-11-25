@@ -20,7 +20,7 @@ echo '
     <div class="row align-items-center">
         <div class="col-9">
             <br>
-                <h1 class="display-1">Fragen
+                <h1 class="display-1">Beispielseite für ein Quiz 
                     <h4>
                         <small class="text-muted">
                             Welche Fragentypen können mit Build-A-Quiz erstellt werden
