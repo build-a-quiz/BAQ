@@ -11,7 +11,7 @@ class MultipleChoice extends Question{
     function buildQuestion($question, $answers){
        // $this->getHeader($this->getType());
         echo "
-                    <h4 class='display-6'>{$question}</h4>
+                    <h4 class='display-8'>{$question}</h4>
                     <div>".PHP_EOL;
 					
                     foreach ($answers as $answer){
