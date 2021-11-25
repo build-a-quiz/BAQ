@@ -44,9 +44,9 @@ $mysqli = new mysqli("localhost", "root", "", "baq");
 		$versuche = "select counter from score where quiz_id=$quiz_id";
 		$versuche = $mysqli->query($versuche);	
 		
-		
+
 		while ($row = $result->fetch_assoc())
-		{ 
+		{
          //Anzeige in Rangliste nur, wenn das Quiz mind. 1x gespielt wurde
 		 if($row['counter'] > 0 && $row['counter'] != "")
 		  {
@@ -65,6 +65,6 @@ $mysqli->close();
 
 ?>
 
- </table>
+  </table>
  </body>
 </html>
