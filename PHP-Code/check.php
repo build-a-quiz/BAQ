@@ -85,15 +85,17 @@ foreach($json_daten as $key => $value)
         {
             echo "<div class='right'>";
             echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
-            echo "Richtig! <br><br>";
+            echo "Richtig! <br>";
             $punkte+=($json_daten[$key]->points);
             echo "</div>";
         }
         else
         {
-            echo "<div class='right'>";
+            echo "<div class='false'>";
             echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
             echo "Falsch! <br><br>";
+            $solution = $json_daten[$key]->solution;
+            echo "Die Richtige Antwort wäre gewesen: \"" .$json_daten[$key]->answers[$solution]."\"";
             echo "</div>";
         }
 
@@ -107,7 +109,7 @@ foreach($json_daten as $key => $value)
         {
             echo "<div class='right'>";
             echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
-            echo "Richtig! <br><br>";
+            echo "Richtig! <br>";
             $punkte+=($json_daten[$key]->points);
             echo "</div>";
         }
@@ -116,6 +118,8 @@ foreach($json_daten as $key => $value)
             echo "<div class='false'>";
             echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
             echo "Falsch! <br><br>";
+            $solution = $json_daten[$key]->solution;
+            echo "Die Richtige Antwort wäre gewesen: \"" .$solution."\"";
             echo "</div>";
         }
 
@@ -161,7 +165,7 @@ foreach($json_daten as $key => $value)
         {
             echo "<div class='right'>";
             echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
-            echo "Richtig! <br><br>";
+            echo "Richtig! <br>";
             $punkte+=($json_daten[$key]->points);
             echo "</div>";
         }
@@ -170,6 +174,13 @@ foreach($json_daten as $key => $value)
             echo "<div class='false'>";
             echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
             echo "Falsch! <br><br>";
+            $solution = $json_daten[$key]->solution;
+            echo "Die Richtige Antwort wäre gewesen: <br>";
+            foreach($solution as $value)
+            {
+                echo $json_daten[$key]->answers[$value]."<br>";
+            }
+
             echo "</div>";
         }
         $counter_frage_mc++;
