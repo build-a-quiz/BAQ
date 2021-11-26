@@ -30,14 +30,19 @@
     </style
 
 </head>
+
+
+<?php
+/*Testing Daniel: */  require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
+Helper::printHeader();
+?>
+
 <body>
 <div class="container">
     <div class="row align-items-center">
         <div class="col-9">
 
             <?php
-            /*Testing Daniel: */  require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
-            Helper::printHeader();
 
             //Quiz_ID aus GET_Request holen, die beim Klick auf "Quiz-Spielen" die Quiz_ID übermittelt
             //$quiz_id = $_GET(['quiz_id']);
