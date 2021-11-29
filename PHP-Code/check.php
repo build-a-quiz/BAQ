@@ -33,7 +33,7 @@
 
 <?php
 session_start();
-$user_id = $_SESSION('user_id');
+$user_id = $_SESSION(['user_id']);
 
 /*Testing Daniel: */  require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
 Helper::printHeader();

@@ -9,7 +9,7 @@
 
 <?php
 session_start();
-$user_id = $_SESSION('user_id');
+$user_id = $_SESSION(['user_id']);
 
 //Einbinden der Konfig-Datei, die die einzelnen Klassen der Fragen enthält
 
