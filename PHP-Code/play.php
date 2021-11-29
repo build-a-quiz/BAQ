@@ -7,8 +7,10 @@
 </head>
 <body>
 
-
 <?php
+session_start();
+$user_id = $_SESSION(['user_id']);
+
 //Einbinden der Konfig-Datei, die die einzelnen Klassen der Fragen enthält
 
 /*Testing Daniel: */ require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
@@ -27,7 +29,7 @@ Helper::printHeader();
 
             //Quiz_ID aus GET_Request holen, die beim Klick auf "Quiz-Spielen" die Quiz_ID übermittelt
             //$quiz_id = $_GET(['quiz_id']);
-            $quiz_id = 1;
+            $quiz_id = $_GET(['user']);
 
             //DB-Abfrage mit obiger Quiz_ID, um die Daten im JSON-String-Format zu holen:
             $mysqli = new mysqli("localhost", "root", "", "baq");
