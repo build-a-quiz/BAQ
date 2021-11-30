@@ -16,12 +16,6 @@
                     <a class="nav-link" href="../../prototyp/builder.html">Build Quiz<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="../../upload/play.php">Let's Quiz</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="../../upload/rangliste.php">Rangliste</a>
-                </li>
-                <li class="nav-item active">
                     <a class="nav-link" href="../upload/Profil_Seite.php">Profil</a>
                 </li>
             </ul>
