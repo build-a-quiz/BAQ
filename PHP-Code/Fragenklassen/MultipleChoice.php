@@ -4,7 +4,7 @@ class MultipleChoice extends Question{
 	static $mc_fragen_counter = 0;
 	
     function __construct(){
-        $type ="MultipleChoice";
+        $type ="MultipleChoiceMA";
         $this->setType($type);
 		MultipleChoice::$mc_fragen_counter++;
     }
@@ -16,9 +16,9 @@ class MultipleChoice extends Question{
                     foreach ($answers as $answer){
                         $count = $this->counter++;
                         echo '
-                            <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" name="Auswahl_MC'.MultipleChoice::$mc_fragen_counter.$count.'" id="option'.$count.'" value="'.$count.'">
-                                <label class="form-check-label" for="option'.$count.'">' .$answer. '</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" id="inlineRadio1" name="inlineRadioOptions" id="option'.$count.'" value="'.$count.'">
+                                <label class="form-check-label" for="inlineRadio1">' .$answer. '</label>
                             </div>' .PHP_EOL;
                     }
                     echo "</div>
