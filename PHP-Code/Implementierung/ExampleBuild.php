@@ -2,6 +2,7 @@
 require_once '../config/config.php';
 $freeTextQuestion = new FreeText();
 $multipleChoiceQuestion = new MultipleChoice();
+$multipleChoiceQuestionMA = new MultipleChoiceMA();
 $dropDownQuestion = new DropDown();
 echo '<!DOCTYPE html>
 <html lang="de">
@@ -29,12 +30,15 @@ echo '
                 </h1>
             <br>
           '.PHP_EOL;
+        $multipleChoiceQuestionMA->buildQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"]);
+        echo "<br><br><hr><br>".PHP_EOL;
+        $multipleChoiceQuestion->buildQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"]);
+        echo "<hr>".PHP_EOL;
+        $freeTextQuestion->buildQuestion("Wie wird ein Qubit auf der Bloch-Kugel dargestellt?", ["Vektor"]);
 
-            $multipleChoiceQuestion->buildQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"]);
-echo "<br><br><hr><br>".PHP_EOL;
+            echo "<br><br><hr><br>".PHP_EOL;
             $dropDownQuestion->buildQuestion("Was ist die höchstwertige technische Entwicklung auf Basis des Tunneleffekts ", ["Hochfrequenz-Halbleiter", "Cooper-Paare", "Gleichmäßig verteilter Käse auf Nachos"]);
-            echo "<hr>".PHP_EOL;
-            $freeTextQuestion->buildQuestion("Wie wird ein Qubit auf der Bloch-Kugel dargestellt?", ["Vektor"]);
+
 
             Helper::printButton();
             echo '
