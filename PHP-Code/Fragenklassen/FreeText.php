@@ -1,15 +1,15 @@
 <?php
 class FreeText extends Question {
-	
-	static $freeTextCounter = 0;
-	
+
+    static $freeTextCounter = 0;
+
     function __construct(){
         $type ="FreeText";
         $this->setType($type);
-		FreeText::$freeTextCounter++;
+        FreeText::$freeTextCounter++;
     }
     public function buildQuestion($question, $answers){
-       // $this->getHeader($this->getType());
+        // $this->getHeader($this->getType());
         echo " 
                     <h4 class='display-8'>{$question}</h4>
                 <div class='col-xs-3'>
