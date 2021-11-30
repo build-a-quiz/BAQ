@@ -30,7 +30,7 @@ echo '
                 </h1>
             <br>
           '.PHP_EOL;
-        $multipleChoiceQuestionMA->buildQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"]);
+        $multipleChoiceQuestionMA->buildQuestion("Wie lassen sich Qubits realisieren?", ["Photonen", "Elektronen", "Ionen", "Spannung"]);
         echo "<br><br><hr><br>".PHP_EOL;
         $multipleChoiceQuestion->buildQuestion("Welcher Wissenschaftler sollte keine lebende Katze in die Finger bekommen?", ["Albert Einstein", "Robert Oppenheimer", "MarieCurie", "Max Planck", "Erwin Schrödinger"]);
         echo "<hr>".PHP_EOL;
