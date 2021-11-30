@@ -13,7 +13,7 @@
 			"type":		"multiplechoice",
 			"question":	"Das ist die Frage",
 			"answers":	["Lösung 1", "Lösung 2", "Lösung 3", "Lösung 4", "Lösung 5"],
-			"solution":	[2, 3, 4],
+			"solution":	2,
 			"points" :	3
 		},
 		{
@@ -22,6 +22,14 @@
 			"question":	"Das ist die Frage",
 			"solution":	"Lösung zum Vergleich",
 			"points" :	2
+		},
+		{
+			"id":		4,
+			"type":		"multiplechoicema",
+			"question":	"Das ist die Frage",
+			"answers":	["Lösung 1", "Lösung 2", "Lösung 3", "Lösung 4", "Lösung 5"],
+			"solution":	[0, 2, 3],
+			"points" :	3
 		}
 	]
 }
