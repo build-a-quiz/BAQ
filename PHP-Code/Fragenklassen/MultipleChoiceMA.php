@@ -4,7 +4,7 @@ class MultipleChoiceMA extends Question{
     static $mc_fragen_counter = 0;
 
     function __construct(){
-        $type ="MultipleChoice";
+        $type ="MultipleChoiceMA";
         $this->setType($type);
         MultipleChoice::$mc_fragen_counter++;
     }
