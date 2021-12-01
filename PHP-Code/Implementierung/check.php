@@ -5,6 +5,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href ="../Design/header.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <style>
         .right{ border: green 2px solid;
@@ -32,10 +33,12 @@
 </head>
 
 <?php
-session_start();
-$user_id = $_SESSION(['user_id']);
+//session_start();
+//$user_id = $_SESSION('user_id');
+$user_id = 1;
 
-/*Testing Daniel: */  require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
+/*Testing Daniel: */  //require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
+require_once '../config/config.php';
 Helper::printHeader();
 ?>
 
@@ -45,6 +48,8 @@ Helper::printHeader();
         <div class="col-9">
 
             <?php
+
+            print_r($_POST);
 
             //Quiz_ID aus GET_Request holen, die beim Klick auf "Quiz-Spielen" die Quiz_ID übermittelt
             //$quiz_id = $_GET(['quiz_id']);
@@ -78,7 +83,9 @@ Helper::printHeader();
             //Lösungen aus DB-Json holen:
             $counter_dropdown = 1;
             $counter_freetext = 1;
-            $counter_frage_mc = 1;
+            $counter_radio = 1;
+            $counter_frage_mc = 0;
+            $counter_fragen_mcma = 1;
             $counter_gesamtpunktzahl = 0;
 
             //Alle Fragen durchgehen:
@@ -93,26 +100,29 @@ Helper::printHeader();
                 //Wenn Frage vom Type "dropdown"
                 if($json_daten[$key]->type == "dropdown")
                 {
-                    if($loesung == $_POST['DropDown'.$counter_dropdown])
+                    if(isset($_POST['DropDown'.$counter_dropdown]))
                     {
-                        echo "<div class='right'>";
-                        echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
-                        echo "Richtig! <br>";
-                        $punkte+=($json_daten[$key]->points);
-                        echo "</div>";
-                    }
-                    else
-                    {
-                        echo "<div class='false'>";
-                        echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
-                        echo "Falsch! <br><br>";
-                        $solution = $json_daten[$key]->solution;
-                        echo "Die Richtige Antwort wäre gewesen: \"" .$json_daten[$key]->answers[$solution]."\"";
-                        echo "</div>";
-                    }
+                        if($loesung == $_POST['DropDown'.$counter_dropdown])
+                        {
+                            echo "<div class='right'>";
+                            echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
+                            echo "Richtig! <br>";
+                            $punkte+=($json_daten[$key]->points);
+                            echo "</div>";
+                        }
+                        else
+                        {
+                            echo "<div class='false'>";
+                            echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
+                            echo "Falsch! <br><br>";
+                            $solution = $json_daten[$key]->solution;
+                            echo "Die Richtige Antwort wäre gewesen: \"" .$json_daten[$key]->answers[$solution]."\"";
+                            echo "</div>";
+                        }
 
-                    $counter_dropdown++;
-                    $counter_gesamtpunktzahl += ($json_daten[$key]->points);
+                        $counter_dropdown++;
+                        $counter_gesamtpunktzahl += ($json_daten[$key]->points);
+                    }
                 }
                 //Wenn Frage vom Type "freetext"
                 else if($json_daten[$key]->type == "freetext")
@@ -138,8 +148,31 @@ Helper::printHeader();
                     $counter_freetext++;
                     $counter_gesamtpunktzahl += ($json_daten[$key]->points);
                 }
-
                 else if($json_daten[$key]->type == "multiplechoice")
+                {
+                    if($loesung == $_POST['radio'.$counter_radio])
+                    {
+                        echo "<div class='right'>";
+                        echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
+                        echo "Richtig! <br>";
+                        $punkte+=($json_daten[$key]->points);
+                        echo "</div>";
+                    }
+                    else
+                    {
+                        echo "<div class='false'>";
+                        echo "Frage: ".$fragen_counter.": ".$json_daten[$key]->question."<br>";
+                        echo "Falsch! <br><br>";
+                        $solution = $json_daten[$key]->solution;
+                        echo "Die Richtige Antwort wäre gewesen: \"" .$json_daten[$key]->answers[$solution]."\"";
+                        echo "</div>";
+                    }
+
+                    $counter_radio++;
+                    $counter_gesamtpunktzahl += ($json_daten[$key]->points);
+                }
+
+                else if($json_daten[$key]->type == "multiplechoicema")
                 {
                     $antworten = $json_daten[$key]->answers;
                     $length = count($antworten);
@@ -150,13 +183,13 @@ Helper::printHeader();
                     for($i = 0; $i<$length; $i++)
                     {
 
-                        if(isset($_POST['Auswahl_MC'.$counter_frage_mc.$i]))
+                        if(isset($_POST['checkbox'.$counter_fragen_mcma.$i]))
                         {
                             $uebermittelte_antworten++;
 
                             for($j = 0; $j < $loesungen_length; $j++)
                             {
-                                if($loesung[$j] == $_POST['Auswahl_MC'.$counter_frage_mc.$i])
+                                if($loesung[$j] == $_POST['checkbox'.$counter_fragen_mcma.$i])
                                 {
                                     $count_richtige_antworten++;
                                     break;
@@ -195,7 +228,7 @@ Helper::printHeader();
 
                         echo "</div>";
                     }
-                    $counter_frage_mc++;
+                    $counter_fragen_mcma++;
                     $counter_gesamtpunktzahl += ($json_daten[$key]->points);
                 }
 
@@ -225,7 +258,7 @@ Helper::printHeader();
             }
             else
             {
-                $insert = "update score set points = $punkte";
+                $insert = "update score set points = $punkte where user_id='$user_id' AND quiz_id='$quiz_id'";
                 $mysqli->query($insert);
 
                 $update = "update score set counter = (counter +1) where user_id='$user_id' AND quiz_id='$quiz_id'";

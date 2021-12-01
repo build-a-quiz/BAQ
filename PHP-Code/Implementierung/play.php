@@ -4,16 +4,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href ="../Design/header.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
 
 <?php
-session_start();
-$user_id = $_SESSION(['user_id']);
+//session_start();
+//$user_id = $_SESSION('user_id');
+$user_id = 1;
 
 //Einbinden der Konfig-Datei, die die einzelnen Klassen der Fragen enthält
 
-/*Testing Daniel: */ require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
+/*Testing Daniel: */ //require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
+require_once '../config/config.php';
 
 Helper::printHeader();
 
@@ -28,8 +31,8 @@ Helper::printHeader();
             <?php
 
             //Quiz_ID aus GET_Request holen, die beim Klick auf "Quiz-Spielen" die Quiz_ID übermittelt
-            //$quiz_id = $_GET(['quiz_id']);
-            $quiz_id = $_GET(['user']);
+            //$quiz_id = $_GET(['user']);
+            $quiz_id = 1;
 
             //DB-Abfrage mit obiger Quiz_ID, um die Daten im JSON-String-Format zu holen:
             $mysqli = new mysqli("localhost", "root", "", "baq");
@@ -52,10 +55,11 @@ Helper::printHeader();
             $mysqli->close();
 
             //String in JSON-Fromat umwandeln
+            //print_r($daten);
             $json_daten = json_decode($daten);
 
             //zu Testzwecken die Daten ausgeben
-            //print_r($json_daten);
+            // print_r($json_daten);
 
             //Fragen mit Inhalt aus DB($json_daten) und den vorgefertigten Frage-KLassen zusammenbauen:
 
@@ -78,14 +82,21 @@ Helper::printHeader();
                         $dropDownQuestion->buildQuestion($json_daten[$key]->question,$json_daten[$key]->answers);
                         echo "<br>";
                     }
-                    //Fall 2: Wenn Frage "multiplechoice"
+                    //Fall 2: Wenn Frage "multiplechoice" (Einfachauswahl)
                     else if($json_daten[$key]->type == "multiplechoice")
                     {
                         $multipleChoiceQuestion = new MultipleChoice();
                         $multipleChoiceQuestion->buildQuestion($json_daten[$key]->question,$json_daten[$key]->answers);
                         echo "<br>";
                     }
-                    //Fall 3: Wenn Frage "freetext
+                    //Fall 3: Wenn Frage "multiplechoicema" (Mehrfachauswahl)
+                    else if($json_daten[$key]->type == "multiplechoicema")
+                    {
+                        $multipleChoicemaQuestion = new MultipleChoiceMA();
+                        $multipleChoicemaQuestion->buildQuestion($json_daten[$key]->question,$json_daten[$key]->answers);
+                        echo "<br>";
+                    }
+                    //Fall 4: Wenn Frage "freetext
                     else if($json_daten[$key]->type == "freetext")
                     {
                         $freeTextQuestion = new FreeText();
@@ -94,9 +105,6 @@ Helper::printHeader();
                     }
                 }
                 ?>
-
-
-                <br>
 
                 <div class='SubmitButtonBox, text-center'>
                     <button type="submit" class="btn btn-info btn-lg">Jetzt Antworten prüfen</button>

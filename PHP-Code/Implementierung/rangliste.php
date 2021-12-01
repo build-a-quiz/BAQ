@@ -6,8 +6,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href ="../Design/header.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <style>
+
         table, th{
             border-width: 1px;
             border-style: solid;
@@ -33,10 +35,14 @@
     </style>
 
     <?php
-    session_start();
-    $user_id = $_SESSION(['user_id']);
 
-    /*Testing Daniel: */  require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
+
+    //session_start();
+    //$user_id = $_SESSION('user_id');
+    $user_id = 1;
+
+    /*Testing Daniel: */  //require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
+    require_once '../config/config.php';
     Helper::printHeader();
 
     //DB-Abfrage um Ergebnisse von diesem Quiz zu holen
