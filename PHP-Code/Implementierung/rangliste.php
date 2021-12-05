@@ -37,9 +37,9 @@
     <?php
 
 
-    //session_start();
-    //$user_id = $_SESSION('user_id');
-    $user_id = 1;
+    session_start();
+    $user_id = $_SESSION('user_id');
+    //$user_id = 1;
 
     /*Testing Daniel: */  //require_once "C:/xampp/htdocs/BAQ/PHP-Code/config/config.php";
     require_once '../config/config.php';
