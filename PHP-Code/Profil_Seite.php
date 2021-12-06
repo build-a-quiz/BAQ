@@ -21,10 +21,13 @@ else //einen tabellarischen Bericht erstellen
                     FROM quiz AS q, users AS u
                     WHERE (u.user_id = q.creator);
                     ";
+    $abfrage3 = " SELECT username FROM users WHERE user_id=$user";
+
 // AND u.user_id = $user);
     // SQL-Abfrage ausführen und anzeigen
     $result_Tabelle1 = mysqli_query($mysqli, $abfrage1);
     $result_Tabelle2 = mysqli_query($mysqli, $abfrage2);
+    $result_Tabelle3 = mysqli_query($mysqli, $abfrage3);
 }
 ?>
 <!-- eine persönliche HTML-Page: tabellarische Abfrage + Bild ändern-->
@@ -48,7 +51,7 @@ include "tpl/header.tpl";
     <div class="row align-items-center">
         <div class="col-9">
 <main>
-    <h1 class="display-1">Herzlich willkommen, <?php echo $user?> !</h1>
+    <h1 class="display-1">Herzlich willkommen, <?php echo mysqli_fetch_assoc($result_Tabelle3)["username"]?>! </h1>
 </main>
 <?php
 
