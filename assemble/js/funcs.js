@@ -19,7 +19,7 @@ function send() {
 
     // generate new request
     let req = new XMLHttpRequest();
-    req.open("POST", 'send.php');
+    req.open("POST", 'php/send.php');
     req.setRequestHeader("creator", creator);
     req.setRequestHeader("players", players);
     req.setRequestHeader('quizname', quizname);

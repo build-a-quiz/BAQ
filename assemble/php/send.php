@@ -13,9 +13,21 @@
  *          - quiz-json
  */
 
+session_start();
+
+if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
+    header("location: ../index.php");
+    exit;
+}
+
+if(!isset($_SERVER['HTTP_QUIZNAME'])) {
+    header("location: ../build.php");
+    exit;
+}
+
+$userId = $_SESSION['id'];
 /* POST-REQUEST */
 // get user-data from http-request
-$userId = $_SERVER['HTTP_CREATOR'];
 $players = $_SERVER['HTTP_PLAYERS'];
 $quizname = $_SERVER['HTTP_QUIZNAME'];
 
@@ -32,7 +44,7 @@ $quizJSON=json_encode($obj);
 //// create connection
 //$mysqli = new mysqli("localhost", "baq", "baq123", "baq");
 
-require_once "config/config_db.php";
+require_once "../config/config_db.php";
 
 // check connection
 if ($mysqli->connect_error)

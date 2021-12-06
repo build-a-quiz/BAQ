@@ -1,7 +1,7 @@
 <?php
 
 $user = $_GET['user'];
-$upload_folder = 'upload/'; //Das Upload-Verzeichnis
+$upload_folder = '../upload/'; //Das Upload-Verzeichnis
 $filename = $user;
 $extension = strtolower(pathinfo($_FILES['datei']['name'], PATHINFO_EXTENSION));
 
@@ -33,4 +33,4 @@ $new_path = $upload_folder.$filename.'.'.$extension;
 //Alles okay, verschiebe Datei an neuen Pfad
 move_uploaded_file($_FILES['datei']['tmp_name'], $new_path);
 
-header("location: profile.php");
+header("location: ../profile.php");

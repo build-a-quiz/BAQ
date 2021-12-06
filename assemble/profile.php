@@ -80,7 +80,7 @@ include "tpl/header.tpl";
                     <h4>Ein eigenes Profilbild auswählen und hochladen
                     </h4>
                     <h6 class="subtile text-muted">(nur .png, .jpg, .jpeg, .gif zulässig)</h6>
-                    <form action="<?php echo "upload.php?user=$user" ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo "php/upload.php?user=$user" ?>" method="post" enctype="multipart/form-data">
                         <input class="btn" type="file" name="datei">
                         <input class="btn btn-success" type="submit" value="Hochladen">
                     </form>

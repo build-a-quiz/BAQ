@@ -20,10 +20,10 @@
                 </li>
             </ul>
             <span class="navbar-text">
-                <a class="nav-link" href="reset-password.php">Reset Password</a>
+                <a class="nav-link" href="php/reset-password.php">Reset Password</a>
             </span>
             <span class="navbar-text">
-                <a class="nav-link" href="logout.php">Logout</a>
+                <a class="nav-link" href="php/logout.php">Logout</a>
             </span>
         </div>
     </nav>

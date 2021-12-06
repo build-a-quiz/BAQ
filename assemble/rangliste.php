@@ -38,11 +38,10 @@
 
     session_start();
 
-
-    $user_id = $_SESSION['id'];
-
     if(!isset($_GET['quiz_id']) && !isset($_POST['quiz_id']))
         header("location: profile.php");
+
+    $user_id = $_SESSION['id'];
 
     require_once 'config/config.php';
     require_once 'config/config_db.php';
