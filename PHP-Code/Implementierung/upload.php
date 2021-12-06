@@ -1,6 +1,8 @@
 <?php
 
 $user = $_GET['user'];
+//echo "upload.php: $user";
+//$user=3;
 $upload_folder = 'upload/'; //Das Upload-Verzeichnis
 $filename = $user;
 $extension = strtolower(pathinfo($_FILES['datei']['name'], PATHINFO_EXTENSION));
