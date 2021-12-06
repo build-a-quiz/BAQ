@@ -69,17 +69,17 @@
 	.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
 		background-color: #c0392b !important;
 	}
-	footer {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	margin-top: 25px;
-	background-color: #DDD;
-	padding: 10px;
-	font-size: 20px;
-	word-spacing: 3px;
-	border-top-color: #cc8400;
-	border-top-style: solid;
-	border-top-width: 2px;
-	}
+	/*footer {*/
+	/*display: flex;*/
+	/*flex-direction: row;*/
+	/*justify-content: space-around;*/
+	/*align-items: center;*/
+	/*margin-top: 25px;*/
+	/*background-color: #DDD;*/
+	/*padding: 10px;*/
+	/*font-size: 20px;*/
+	/*word-spacing: 3px;*/
+	/*border-top-color: #cc8400;*/
+	/*border-top-style: solid;*/
+	/*border-top-width: 2px;*/
+	/*}*/
