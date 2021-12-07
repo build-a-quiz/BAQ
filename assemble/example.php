@@ -5,23 +5,27 @@ $multipleChoiceQuestion = new MultipleChoice();
 $multipleChoiceQuestionMA = new MultipleChoiceMA();
 $dropDownQuestion = new DropDown();
 
-session_start();
+/* session_start(); */
 
-// Check if the user is logged in, if not then redirect him to login-page
-if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
-    header("location: index.php");
-    exit;
-}
+/* // Check if the user is logged in, if not then redirect him to login-page */
+/* if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){ */
+/*     header("location: index.php"); */
+/*     exit; */
+/* } */
 
 echo '<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Quiztypes - Prototyp</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
 </head>
 <body>'. PHP_EOL;
 Helper::printHeader();
@@ -30,7 +34,7 @@ echo '
     <div class="row align-items-center">
         <div class="col-9">
             <br>
-                <h1 class="display-2">Beispielseite für ein Quiz 
+                <h1 class="display-2">Beispielseite für ein Quiz
                     <h4>
                         <small class="text-muted">
                             Welche Fragentypen können mit Build-A-Quiz erstellt werden

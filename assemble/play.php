@@ -10,7 +10,10 @@
 
 <?php
 session_start();
-$user_id = $_SESSION['id'];
+/* $user_id = $_SESSION['id']; */
+$user_id = $_GET['userid'];
+
+echo "UserID: $user_id";
 
 if(!isset($_GET['user']))
     header("location: profile.php");
@@ -67,6 +70,10 @@ Helper::printHeader();
 
             ?>
             <form action="<?php echo "check.php?quiz_id=$quiz_id"?>" method="post">
+
+<?php
+				echo "<input type='hidden' id='userid' name='userid' value='$user_id'>";
+?>
 
                 <?php
                 $fragen_counter = 0;

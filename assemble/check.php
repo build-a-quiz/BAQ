@@ -42,10 +42,10 @@
 
 session_start();
 // Check if the user is logged in, if not then redirect him to login-page
-if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true) {
-    header("location: index.php");
-    exit;
-}
+/* if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true) { */
+/*     header("location: index.php"); */
+/*     exit; */
+/* } */
 
 if (!isset($_GET['quiz_id'])) {
     header("location: profile.php");
@@ -53,6 +53,13 @@ if (!isset($_GET['quiz_id'])) {
 }
 
 $user_id = $_SESSION['id'];
+$user_id = $_POST['userid'];
+
+print_r($_GET);
+print_r($_POST);
+
+echo "UserID: $user_id";
+
 
 require_once 'config/config.php';
 require_once 'config/config_db.php';
@@ -81,7 +88,7 @@ Helper::printHeader();
             }
 
             // DB-Verbindung schließen
-            $mysqli->close();
+            /* $mysqli->close(); */
 
             //String in JSON-Fromat umwandeln
             $json_daten = json_decode($daten);
@@ -221,7 +228,7 @@ Helper::printHeader();
 
             //Ergebnis in Datenbank eintragen:
             //DB-Abfrage mit obiger Quiz_ID, um die Daten im JSON-String-Format zu holen:
-            $mysqli = new mysqli("localhost", "root", "", "baq");
+            /* $mysqli = new mysqli("localhost", "root", "", "baq"); */
 
             // DB-Verbindung prüfen
             if ($mysqli === false) {
