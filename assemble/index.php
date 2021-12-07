@@ -126,20 +126,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username;?>" placeholder="username">
+                        <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username;?>" placeholder="Benutzername">
                         <span class="invalid-feedback"><?php echo $username_err; ?></span>
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" placeholder="password">
+                        <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" placeholder="Passwort">
                         <span class="invalid-feedback"><?php echo $password_err; ?></span>
                     </div>
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customControlInline">
-                            <label class="custom-control-label" for="customControlInline">Remember me</label>
+                            <label class="custom-control-label" for="customControlInline">Login-Daten merken</label>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center mt-3 login_container">
@@ -149,7 +149,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="mt-4">
                 <div class="d-flex justify-content-center links">
-                    Don't have an account? <a href="register.php" class="ml-2">Sign Up</a>
+                    Noch keinen Account? <a href="register.php" class="ml-2">Registrierung</a>
                 </div>
 <!--                <div class="d-flex justify-content-center links">-->
 <!--                    <a href="reset-password.php">Forgot your password?</a>-->

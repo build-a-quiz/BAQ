@@ -55,11 +55,6 @@ if (!isset($_GET['quiz_id'])) {
 $user_id = $_SESSION['id'];
 $user_id = $_POST['userid'];
 
-print_r($_GET);
-print_r($_POST);
-
-echo "UserID: $user_id";
-
 
 require_once 'config/config.php';
 require_once 'config/config_db.php';

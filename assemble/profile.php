@@ -24,8 +24,6 @@ if ($mysqli === false) {
     $user = $_SESSION["id"];
     $username = $_SESSION["username"];
 
-	echo "UserID: $user";
-
     // SQL-Abfrage-String zusammenauen - muss noch angepasst werden
     $abfrage1 = " SELECT * FROM quiz WHERE creator=$user";
     /* $abfrage2 = " SELECT q.quiz_id, q.quiz_name, u.user_id, u.username */

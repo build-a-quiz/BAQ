@@ -13,7 +13,6 @@ session_start();
 /* $user_id = $_SESSION['id']; */
 $user_id = $_GET['userid'];
 
-echo "UserID: $user_id";
 
 if(!isset($_GET['user']))
     header("location: profile.php");
