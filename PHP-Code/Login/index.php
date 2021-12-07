@@ -148,10 +148,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="mt-4">
                 <div class="d-flex justify-content-center links">
-                    Don't have an account? <a href="register.php" class="ml-2">Sign Up</a>
+                    Noch keinen Account? <a href="register.php" class="ml-2">Registrierung</a>
                 </div>
                 <div class="d-flex justify-content-center links">
-                    <a href="#">Forgot your password?</a>
+                    <a href="#">Passwort vergessen?</a>
                 </div>
             </div>
         </div>
