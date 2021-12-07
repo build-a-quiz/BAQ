@@ -123,11 +123,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <div class="wrapper container">
     <div class="row align-items-center">
         <div class="col-9">
-    <h2>Sign Up</h2>
-    <p>Please fill this form to create an account.</p>
+    <h2>Registrierung</h2>
+    <p>Bitte das Formular ausfüllen, um ein Benutzerkonto zu erstellen</p>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group">
-            <label>Username</label>
+            <label>Benutzername</label>
             <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
             <span class="invalid-feedback"><?php echo $username_err; ?></span>
         </div>
@@ -137,12 +137,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <span class="invalid-feedback"><?php echo $mail_err; ?></span>
         </div>
         <div class="form-group">
-            <label>Password</label>
+            <label>Passwort</label>
             <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
             <span class="invalid-feedback"><?php echo $password_err; ?></span>
         </div>
         <div class="form-group">
-            <label>Confirm Password</label>
+            <label>Passwort bestätigen</label>
             <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
             <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
         </div>
@@ -150,7 +150,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="submit" class="btn btn-info" value="Submit">
             <input type="reset" class="btn btn-secondary ml-2" value="Reset">
         </div>
-        <p>Already have an account? <a href="index.php">Login here</a>.</p>
+        <p>Bestehendes Konto? <a href="index.php">Login</a>.</p>
     </form>
         </div>
     </div>
