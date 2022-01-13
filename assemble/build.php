@@ -52,7 +52,7 @@ echo "
           " . PHP_EOL;
 ?>
 
-    <script src="js/funcs.js"></script>
+    <script src="js/send.js"></script>
 
     <hr>
     <div class="input-group input-group-default mb-2">

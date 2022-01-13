@@ -1,5 +1,5 @@
 /*
- * funcs.js
+ * send.js
  * General purpose javascript.
  * The quiz is entirely built in the browser-session via javascript.
  * This is done for the sake of not having fragments on the server.
