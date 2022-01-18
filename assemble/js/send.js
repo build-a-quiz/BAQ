@@ -19,7 +19,7 @@ function send() {
 
     // generate new request
     let req = new XMLHttpRequest();
-    req.open("POST", 'send.php');
+    req.open("POST", 'php/send.php');
     req.setRequestHeader("creator", creator);
     req.setRequestHeader("players", players);
     req.setRequestHeader('quizname', quizname);
@@ -109,7 +109,7 @@ async function addFreeText() {
 
     // write question to temp array and print on preview
     if(question && solution && points) {
-        allQ.push({"id":1,"type":"FreeText","question":question,"solution":solution,"points":points})
+        allQ.push({"id":1,"type":"freetext","question":question,"solution":solution,"points":points})
         console.log(allQ);
 
         // update preview div
@@ -186,7 +186,7 @@ async function addDropDown(){
     // write question to temp array and print on preview
     if(question && answers && solution >= 0 && points) {
 
-        allQ.push({"id":1,"type":"DropDown","question":question,"answers":answers,"solution":solution,"points":points})
+        allQ.push({"id":1,"type":"dropdown","question":question,"answers":answers,"solution":solution,"points":points})
         console.log(allQ);
 
         // update preview div
@@ -266,7 +266,7 @@ async function addMultipleChoice(){
 
     if(question && answers && solution >= 0 && points) {
 
-        allQ.push({"id":1,"type":"MultipleChoice","question":question,"answers":answers,"solution":solution,"points":points})
+        allQ.push({"id":1,"type":"multiplechoice","question":question,"answers":answers,"solution":solution,"points":points})
         console.log(allQ);
 
         // update preview div
@@ -363,7 +363,7 @@ async function addMultipleChoiceMA(){
 
     if(question && answers && solNums && points) {
 
-        allQ.push({"id":1,"type":"MultipleChoice","question":question,"answers":answers,"solution":solNums,"points":points})
+        allQ.push({"id":1,"type":"multiplemhoicema","question":question,"answers":answers,"solution":solNums,"points":points})
         console.log(allQ);
 
         // update preview div
